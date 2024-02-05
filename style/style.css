@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menuBtn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.menuBtn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menuBtn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.menuBtn {
+  margin-left: 85%;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  position: fixed;
+  z-index: 3;
+  overflow: hidden;
+  display: none;
+}
+
+.menuBtn span {
+  width: 34px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  transition: all 0.5s;
+}
+
+.menuBtn span:nth-of-type(2) {
+  top: calc(20% - 5px);
+}
+
+.menuBtn span:nth-of-type(3) {
+  top: calc(80% + 5px);
+}
+
+header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .header-up {
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-up button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #fdc500;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  margin-right: 1%;
+  color: #00296b;
+  font-size: 20px;
+  transition: 0.5s;
+}
+header .header-up button:hover {
+  background-color: #219ebc;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+header ul a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #00509d;
+  font-size: 20px;
+  padding: 20px;
+  transition: 0.5s;
+}
+header ul a:hover {
+  color: #fdc500;
+}
+
+hr {
+  margin-top: 1%;
+  border: 1px solid rgba(179, 179, 179, 0.2);
+}
+
+.chemistry {
+  padding-top: 2%;
+}
+.chemistry h2 {
+  text-align: center;
+  color: #00296b;
+  font-weight: 400;
+}
+.chemistry .chemistry-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.chemistry .chemistry-block .chemisty-katal {
+  padding-top: 4%;
+}
+.chemistry .chemistry-block .chemisty-katal a {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: #00296b;
+  font-weight: 400;
+}
+
+.company {
+  margin-top: 4%;
+  background-image: url(/img/fon-kolba.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+.company .company-fon {
+  background-color: rgba(105, 105, 105, 0.9);
+  width: 100%;
+}
+.company .company-fon h2 {
+  text-align: center;
+  font-size: 45px;
+  color: white;
+  padding-top: 5%;
+}
+.company .company-fon p {
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  padding-top: 4%;
+}
+.company .company-fon p:nth-of-type(2) {
+  font-size: 20px;
+  color: black;
+}
+.company .company-fon .company-fon__icon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.company .company-fon .company-fon__icon .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+.company .company-fon .company-fon__icon p {
+  padding-top: 4%;
+  color: white;
+  font-size: 20px;
+}
+.company .company-fon .company-fon__icon h2 {
+  padding-top: 4%;
+  color: white;
+  font-size: 25px;
+}
+
+.catalogy {
+  margin-top: 7%;
+  padding: 60px;
+}
+.catalogy .catalogy-text {
+  margin-left: 3%;
+}
+.catalogy .catalogy-text h2 {
+  font-size: 45px;
+  font-weight: 200;
+  color: #00296b;
+}
+.catalogy .catalogy-text p {
+  padding-top: 1%;
+  font-size: 20px;
+}
+.catalogy .catalogy-btn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.catalogy .catalogy-btn button {
+  border: none;
+  margin: 20px;
+  width: 550px;
+  padding: 40px;
+  cursor: pointer;
+  font-size: 50px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+  transition: 1s;
+}
+.catalogy .catalogy-btn button:hover {
+  transform: scale(1.2);
+}
+.catalogy .catalogy-btn .kislota {
+  background-image: url(/img/kolba.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+.catalogy .catalogy-btn .sir {
+  background-image: url(/img/sir.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+.catalogy .catalogy-btn .soda {
+  background-image: url(/img/soda.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+.catalogy .catalogy-btn .reagent {
+  background-image: url(/img/reagent.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+}
+
+.advan {
+  margin-top: 4%;
+  padding: 60px;
+  background-color: rgba(105, 105, 105, 0.2);
+}
+.advan h2 {
+  margin-left: 3%;
+  font-size: 45px;
+  font-weight: 200;
+  color: #00296b;
+}/*# sourceMappingURL=style.css.map */
