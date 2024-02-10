@@ -57,7 +57,14 @@ header img {
      object-fit: cover;
 }
 header .header-up {
-  margin-top: 1%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: #00296b;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -66,20 +73,20 @@ header .header-up {
 header .header-up button {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   cursor: pointer;
-  background-color: #fdc500;
+  background-color: #FF6E28;
   border: none;
   border-radius: 10px;
   padding: 10px;
   width: 250px;
   margin-right: 1%;
-  color: #00296b;
+  color: white;
   font-size: 20px;
   transition: 0.5s;
 }
 header .header-up button:hover {
-  background-color: #219ebc;
+  background-color: #252525;
 }
 header ul {
   display: flex;
@@ -90,53 +97,61 @@ header ul {
 }
 header ul a {
   text-decoration: none;
-  font-weight: 700;
-  color: #00509d;
+  font-weight: 200;
+  color: white;
   font-size: 20px;
   padding: 20px;
   transition: 0.5s;
 }
 header ul a:hover {
-  color: #fdc500;
+  color: #FF6E28;
+}
+header ul a.active {
+  color: #FF6E28;
 }
 
 hr {
-  margin-top: 1%;
+  margin-top: 7%;
   border: 1px solid rgba(179, 179, 179, 0.2);
 }
 
-.chemistry {
-  padding-top: 2%;
-}
-.chemistry h2 {
-  text-align: center;
-  color: #00296b;
-  font-weight: 400;
-}
-.chemistry .chemistry-block {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.chemistry .chemistry-block .chemisty-katal {
-  padding-top: 4%;
-}
-.chemistry .chemistry-block .chemisty-katal a {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  text-align: center;
-  text-decoration: none;
-  color: #00296b;
-  font-weight: 400;
+body {
+  background-color: #252525;
 }
 
+/*.chemistry{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: white;
+  h2{
+    text-align: center;
+    color: #00296b;
+    font-weight:400;
+  }
+  .chemistry-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    .chemisty-katal{
+      padding-top: 4%;
+    }
+    .chemisty-katal a{
+      display: flex;
+      flex-direction:column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      text-align: center;
+      text-decoration: none;
+      color: #00296b;
+      font-weight:400;
+    }
+  }
+}
+*/
 .company {
-  margin-top: 4%;
   background-image: url(/img/fon-kolba.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -200,9 +215,10 @@ hr {
 .catalogy .catalogy-text h2 {
   font-size: 45px;
   font-weight: 200;
-  color: #00296b;
+  color: white;
 }
 .catalogy .catalogy-text p {
+  color: white;
   padding-top: 1%;
   font-size: 20px;
 }
@@ -216,8 +232,8 @@ hr {
 .catalogy .catalogy-btn button {
   border: none;
   margin: 20px;
-  width: 550px;
-  padding: 40px;
+  width: 540px;
+  height: 129px;
   cursor: pointer;
   font-size: 50px;
   border-radius: 10px;
@@ -232,28 +248,62 @@ hr {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 0;
+}
+.catalogy .catalogy-btn .kislota p {
+  padding: 30px;
+  border-radius: 10px;
   color: white;
+  font-size: 30px;
+  background-color: rgba(105, 105, 105, 0.5);
+  height: 129px;
+  padding-top: 50px;
 }
 .catalogy .catalogy-btn .sir {
   background-image: url(/img/sir.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 0;
+}
+.catalogy .catalogy-btn .sir p {
+  padding: 30px;
+  padding-top: 50px;
+  border-radius: 10px;
   color: white;
+  font-size: 30px;
+  background-color: rgba(105, 105, 105, 0.5);
+  height: 129px;
 }
 .catalogy .catalogy-btn .soda {
   background-image: url(/img/soda.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 0;
+}
+.catalogy .catalogy-btn .soda p {
+  padding: 30px;
+  padding-top: 50px;
+  border-radius: 10px;
   color: white;
+  font-size: 30px;
+  background-color: rgba(105, 105, 105, 0.5);
+  height: 129px;
 }
 .catalogy .catalogy-btn .reagent {
   background-image: url(/img/reagent.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 0;
+}
+.catalogy .catalogy-btn .reagent p {
+  padding: 30px;
+  border-radius: 10px;
   color: white;
+  font-size: 30px;
+  background-color: rgba(105, 105, 105, 0.5);
 }
 
 .advan {
@@ -265,5 +315,82 @@ hr {
   margin-left: 3%;
   font-size: 45px;
   font-weight: 200;
-  color: #00296b;
+  color: white;
+}
+.advan .advan-position {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.advan .advan-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  margin-top: 5%;
+  text-align: center;
+}
+.advan .advan-block p {
+  padding-top: 5%;
+  font-size: 25px;
+  color: white;
+}
+
+footer {
+  background-color: #00296b;
+}
+footer .footer-bottom {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .footer-bottom h2 {
+  color: white;
+  font-size: 35px;
+}
+footer .footer-bottom .bottom-text h2 {
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 3%;
+}
+footer .footer-bottom .bottom-text__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+footer .footer-bottom .bottom-text__link p {
+  color: white;
+  font-size: 20px;
+}
+footer .footer-bottom .bottom-text__link a {
+  text-decoration: none;
+  color: #FF6E28;
+}
+footer hr {
+  margin-top: 0%;
+}
+
+.prava {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.prava h2 {
+  color: white;
+  font-size: 17px;
+  font-weight: 200;
+}
+.prava a {
+  text-decoration: none;
+  color: #FF6E28;
 }/*# sourceMappingURL=style.css.map */

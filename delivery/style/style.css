@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menuBtn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.menuBtn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menuBtn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.menuBtn {
+  margin-left: 85%;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  position: fixed;
+  z-index: 3;
+  overflow: hidden;
+  display: none;
+}
+
+.menuBtn span {
+  width: 34px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  transition: all 0.5s;
+}
+
+.menuBtn span:nth-of-type(2) {
+  top: calc(20% - 5px);
+}
+
+.menuBtn span:nth-of-type(3) {
+  top: calc(80% + 5px);
+}
+
+header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .header-up {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: #00296b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-up button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  background-color: #FF6E28;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  margin-right: 1%;
+  color: white;
+  font-size: 20px;
+  transition: 0.5s;
+}
+header .header-up button:hover {
+  background-color: #252525;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+header ul a {
+  text-decoration: none;
+  font-weight: 200;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  transition: 0.5s;
+}
+header ul a:hover {
+  color: #FF6E28;
+}
+header ul a.active {
+  color: #FF6E28;
+}
+
+hr {
+  margin-top: 7%;
+  border: 1px solid rgba(179, 179, 179, 0.2);
+}
+
+body {
+  background-color: #252525;
+}
+
+.wrapper {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 5%;
+}
+.wrapper .payment h2 {
+  font-weight: 200;
+  font-size: 35px;
+  color: white;
+}
+.wrapper .payment p {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 2%;
+  color: #FF6E28;
+}
+.wrapper .zagolovok {
+  margin-top: 5%;
+  font-weight: 200;
+  font-size: 35px;
+  color: white;
+}
+.wrapper .delivery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.wrapper .delivery h2 {
+  font-weight: 200;
+  font-size: 35px;
+  color: black;
+}
+.wrapper .delivery .delivery-block {
+  margin-top: 2%;
+  width: 45%;
+}
+.wrapper .delivery .delivery-block h2 {
+  font-weight: 200;
+  font-size: 35px;
+  color: white;
+}
+.wrapper .delivery .delivery-block li {
+  color: #FF6E28;
+}
+.wrapper .delivery .delivery-block h3 {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 1%;
+  color: #FF6E28;
+}
+.wrapper .delivery .delivery-block p {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  color: #FF6E28;
+}
+
+footer {
+  background-color: #00296b;
+  margin-top: 3%;
+}
+footer .footer-bottom {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .footer-bottom h2 {
+  color: white;
+  font-size: 35px;
+}
+footer .footer-bottom .bottom-text h2 {
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 3%;
+}
+footer .footer-bottom .bottom-text__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+footer .footer-bottom .bottom-text__link p {
+  color: white;
+  font-size: 20px;
+}
+footer .footer-bottom .bottom-text__link a {
+  text-decoration: none;
+  color: #FF6E28;
+}
+footer hr {
+  margin-top: 0%;
+}
+
+.prava {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.prava h2 {
+  color: white;
+  font-size: 17px;
+  font-weight: 200;
+}
+.prava a {
+  text-decoration: none;
+  color: #FF6E28;
+}/*# sourceMappingURL=style.css.map */

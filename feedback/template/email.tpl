@@ -18,13 +18,6 @@
                 <hr>
                 %message%
                 <hr>
-                <br>
-                Мессенджер: <b>%messenger%</b>
-                <br>
-                Услуга: <b>%service%</b>
-                <br>
-                Брендбук и фирменный стиль: <b>%brand%</b>
-                <br>
                 Телефон: <b>%phone%</b>
                 <br>
                 Дата отправки: <b>%date%</b>

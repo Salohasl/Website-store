@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html xml:lang="ru" lang="ru" class="">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<meta name="HandheldFriendly" content="true" >
+<meta name="MobileOptimized" content="width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Каталог товаров</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="icon" href="/icon/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style/normalize.css">
+<link rel="stylesheet" href="/catalogy/style/style.css">
+<link rel="stylesheet" href="/feedback/css/form-processing.css">
+<link rel="stylesheet" href="/catalogy/style/media.css">
+</head>
+<header>
+  <div class="header-up">
+    <img src="/icon/logo.svg" alt="logo" width="150px" height="80px">
+    <nav>
+      <ul>
+       <a href="/index.html"><li>Главная</li></a>
+       <a href="/catalogy/index.html" class="active"><li>Каталог товаров</li></a>
+        <a href="/delivery/index.html"><li>Доставка и оплата</li></a>
+        <a href="/about/index.html"><li>О компании</li></a>
+        <a href="/contact/index.html"><li>Контакты</li></a>
+      </ul>
+    </nav>
+    <button id="buttonClick"><img src="/icon/phon.png" width="30px" height="30px">Заказать звонок</button>
+  </div>
+    <div class="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</header>
+
+<body>
+  <hr>
+  <main>
+    <div class="container" id="containerFormUp" style="margin-top: 100px;"> 
+      <div class="form-container form__wrapper" id="form">
+        <!-- Форма обратной связи -->
+        <form id="feedback-form" action="/feedback/form-processing.php" enctype="multipart/form-data" method="post" novalidate>
+              <h1>Оставьте заявку на обратный звонок</h1>
+              <p>Наш специалист свяжется с Вами в ближайшее время.
+              <br>  Заявка направленная после 17:00 (+7 GMT),
+              <br>  обрабатывается на следующий день в рабочее время.</p>
+              <div class="form-row">
+                <!-- Имя пользователя -->
+                <div class="form-group">
+                    <label for="name" class="control-label"></label>
+                    <input id="name" type="text" name="name" class="form-control style_input" value="" placeholder="Введите имя" minlength="2"
+                    maxlength="30" required="required">
+                    <div class="invalid-feedback"></div>
+                </div>
+              </div>
+                <!-- Телефон -->
+                <div class="form-group">
+                  <label for="phone" class="control-label"></label>
+                  <div class="input-group">
+                  <input id="phone" type="tel" name="phone" class="form-control style_input phone_mask" placeholder="Введите телефон" value="" required="required" autocomplete="off">
+                  <div class="invalid-feedback"></div>
+                  </div>
+                </div>
+      
+              <!-- Сообщение пользователя -->
+              <div class="form-group">
+                <label for="message" class="control-label"></label>
+                <input id="message" name="message" class="form-control style_input" rows="1"
+                    placeholder="Дополнительные сведения" minlength="0" maxlength="500"></textarea>
+                <div class="invalid-feedback"></div>
+              </div>
+
+              <!-- Сообщение об ошибке -->
+              <div class="form-error form-error_hide">Исправьте данные и отправьте форму ещё раз.</div>
+          
+          
+              
+                <div class="block-forma__elemt">
+                  <!-- Кнопка для отправки формы на сервер -->
+                  <div class="form-submit">
+                    <button id="buttonForm" type="submit">Отправить</button>
+                  </div>
+  
+                        <!-- Пользовательское солашение -->
+                  <div class="form-group form-agree form-check style_sogl">
+                    <input class="form-check-input" type="checkbox" name="agree" id="agree" required value="true" checked>
+                    <label class="form-check-label" for="agree">Соглашение на обработку <br> <a href="/politica.html" target="_blank">персональных данных</a></label>
+                    <div class="invalid-feedback"></div>
+                  </div>  
+                </div>
+             
+        </form>
+  
+        <!-- Сообщение об успешной отправки формы -->
+        <div class="form-success form-success_hide">
+          <div class="form-success__message">
+            <h2>Заявка успешно сформирована</h2>
+            <h2>Наш менеджер свяжется с вами в ближайшее время.</h2>
+            <button type="button" class="form-success__btn">Закрыть</button>
+          </div>
+        </div>
+      
+      </div>
+  </div>
+
+  <div class="catalog">
+    <h2>Каталог продукции</h2>
+    <p>Более 10 лет(с 2007г.) мы профессионально развиваем ассортимент продукции, а
+       также оптимизируем логистику, чтобы поставлять нашим клиентам по всей России 
+      только высококачественное химическое сырье по самым лучшим ценам.</p>
+    <div class="catalog-block">
+      <div class="catalog-block__link">
+        <p>Отфильтровать по:</p>
+        <button id="btnClassis" class="active" onclick="catalogClassic()">Стандартный каталог</button>
+        <button id="btnLink" onclick="catalogLink()">Алфавитный каталог</button>
+      </div>
+      <div class="catalog-block__a-z" id="blockLink">
+        <a href="#charA" id="act" class="nav-link" onclick="letterA()">A</a>
+        <a href="#charB" class="nav-link" onclick="letterB()">Б</a>
+        <a href="#charW" class="nav-link" onclick="letterW()">В</a>
+        <a href="#charG" class="nav-link" onclick="letterG()">Г</a>
+        <a href="#charI" class="nav-link" onclick="letterI()">И</a>
+        <a href="#charK" class="nav-link" onclick="letterK()">К</a>
+        <a href="#charL" class="nav-link" onclick="letterL()">Л</a>
+        <a href="#charM" class="nav-link" onclick="letterM()">М</a>
+        <a href="#charN" class="nav-link" onclick="letterN()">Н</a>
+        <a href="#charO" class="nav-link" onclick="letterO()">О</a>
+        <a href="#charP" class="nav-link" onclick="letterP()">П</a>
+        <a href="#charS" class="nav-link" onclick="letterS()">С</a>
+        <a href="#charT" class="nav-link" onclick="letterT()">Т</a>
+        <a href="#charU" class="nav-link" onclick="letterU()">У</a>
+        <a href="#charF" class="nav-link" onclick="letterF()">Ф</a>
+        <a href="#charH" class="nav-link" onclick="letterH()">Х</a>
+        <a href="#charCH" class="nav-link" onclick="letterCH()">Ц</a>
+      </div>
+      <div class="product" id="paginated-list" data-current-page="1" aria-live="polite">
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аммиак.jpg" alt="Пигмент" width="250px" height="250px"></a>
+          <h2 class="text">Аммиак водный м.Б</h2>
+          <button id="buttonClickProduct" value="Аммиак водный м.Б">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/995cb3824864ee32ce9863c0f2e5e843.jpg" alt="Азотная кислотa" width="250px" height="250px"></a>
+          <h2 class="text" >Азотная кислотa</h2>
+          <button id="buttonClickProduct" value="Азотная кислотa">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Гипохлорит.jpg" alt="Гипохлорит" width="250px" height="250px"></a>
+          <h2 class="text">Гипохлорит натрия РФ</h2>
+          <button id="buttonClickProduct" value="Гипохлорит натрия РФ">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Муравьиная.jpg" alt="Муравьиная кислотa" width="250px" height="250px"></a>
+          <h2 class="text">Муравьиная кислота</h2>
+          <button id="buttonClickProduct" value="Муравьиная кислота">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Натр.jpg" alt="Натр едкий марка А " width="250px" height="250px"></a>
+          <h2 class="text">Натр едкий марка А </h2>
+          <button id="buttonClickProduct" value="Натр едкий марка А">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Натр едкий марка РД.jpg" alt="Натр едкий марка РД " width="250px" height="250px"></a>
+          <h2 class="text" >Натр едкий марка РД </h2>
+          <button id="buttonClickProduct" value="Натр едкий марка РД ">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Перекись.jpg" alt="Перекись водорода 34-39 %" width="250px" height="250px"></a>
+          <h2 class="text">Перекись водорода 34-39 %</h2>
+          <button id="buttonClickProduct" value="Перекись водорода 34-39 %">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Перекись50.jpg" alt="Перекись водорода 50%" width="250px" height="250px"></a>
+          <h2 class="text">Перекись водорода 50%</h2>
+          <button id="buttonClickProduct" value="Перекись водорода 50%">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Сернаякислота.jpg" alt="Серная кислота" width="250px" height="250px"></a>
+          <h2 class="text">Серная кислота</h2>
+          <button id="buttonClickProduct" value="Серная кислота">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Бис.jpg" alt="Бисульфит натрия технический" width="250px" height="250px"></a>
+          <h2 class="text">Бисульфит натрия техн.</h2>
+          <button id="buttonClickProduct" value="Бисульфит натрия технический">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Соляная.jpg" alt="Соляная кислота ХЧ,Ч " width="250px" height="250px"></a>
+          <h2 class="text">Соляная кислота ХЧ,Ч</h2>
+          <button id="buttonClickProduct" value="Соляная кислота ХЧ,Ч ">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Уксусная.jpg" alt="Уксусная кислота 99%" width="250px" height="250px"></a>
+          <h2 class="text">Уксусная кислота 99%</h2>
+          <button id="buttonClickProduct" value="Уксусная кислота 99%">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Хлорное.jpg" alt="Хлорное железо" width="250px" height="250px"></a>
+          <h2 class="text">Хлорное железо</h2>
+          <button id="buttonClickProduct" value="Хлорное железо">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Пропиленгликоль.png" alt="Пропиленгликоль" width="250px" height="250px"></a>
+          <h2 class="text">Пропиленгликоль</h2>
+          <button id="buttonClickProduct" value="Пропиленгликоль">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Ортофосфорная.jpg" alt="Ортофосфорная кислота" width="250px" height="250px"></a>
+          <h2 class="text">Ортофосфорная кислота</h2>
+          <button id="buttonClickProduct" value="Ортофосфорная кислота">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list"> 
+          <a href="#"><img src="/img/Уксусная1.jpg" alt="Уксусная кислота раствор 70%" width="250px" height="250px"></a>
+          <h2 class="text">Уксусная кислота раствор 70%</h2>
+          <button id="buttonClickProduct" value="Уксусная кислота раствор 70%">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Сульфат.jpg" alt="Сульфат алюминия тех" width="250px" height="250px"></a>
+          <h2 class="text">Сульфат алюминия тех</h2>
+          <button id="buttonClickProduct" value="Сульфат алюминия тех">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Гипохлорит1.jpg" alt="Гипохлорит кальция (бочки 50 кг.)" width="250px" height="250px"></a>
+          <h2 class="text">Гипохлорит кальция (50 кг)</h2>
+          <button id="buttonClickProduct" value="Гипохлорит кальция (бочки 50 кг.)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Кислота.jpg" alt="Кислота лимонная ГТД " width="250px" height="250px"></a>
+          <h2 class="text">Кислота лимонная ГТД</h2>
+          <button id="buttonClickProduct" value="Кислота лимонная ГТД">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/НатрКитай.png" alt="Натр едкий гранулированный Китай (меш. по 25 кг.)" width="250px" height="250px"></a>
+          <h2 class="text">Натр едкий <br> гранулированный Китай (25кг)</h2>
+          <button id="buttonClickProduct" value="Натр едкий гранулированный Китай (меш. по 25 кг.)">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Натредкийгр.jpg" alt="Натр едкий гранулированный СТО 00203275-206-2007(меш. по 25 кг.)" width="250px" height="250px"></a>
+          <h2 class="text">Натр едкий гранулированный <br> СТО 00203275-206-2007(25кг) </h2>
+          <button id="buttonClickProduct" value="Натр едкий гранулированный СТО 00203275-206-2007(меш. по 25 кг.)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/ТринатрийФосфат.jpg" alt="ТринатрийФосфат" width="250px" height="250px"></a>
+          <h2 class="text">ТринатрийФосфат</h2>
+          <button id="buttonClickProduct" value="ТринатрийФосфат">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Натрийгидроокись(бочка 60 кг)ЧДА.jpg" alt="Натрий гидроокись(бочка 60 кг) ЧДА" width="250px" height="250px"></a>
+          <h2 class="text">Натрий гидроокись <br> (бочка 60 кг) ЧДА</h2>
+          <button id="buttonClickProduct" value="Натрий гидроокись(60кг) ЧДА">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Содаальцинированная.jpg" alt="Сода кальцинированная марка Б" width="250px" height="250px"></a>
+          <h2 class="text">Сода кальцинированная марка Б</h2>
+          <button id="buttonClickProduct" value="Сода кальцинированная марка Б">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Сольтабл.png" alt="Соль таблетированная поваренная экстра" width="250px" height="250px"></a>
+          <h2 class="text">Соль таблетированная <br> поваренная экстра</h2>
+          <button id="buttonClickProduct" value="Соль таблетированная поваренная экстра">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Содааустическая(.jpg" alt="Сода каустическая(чешуя) (меш.по 25 кг. ИРАН) в б/б(приход новый) " width="250px" height="250px"></a>
+          <h2 class="text">Сода каустическая(чешуя) <br> (25кг. ИРАН)</h2>
+          <button id="buttonClickProduct" value="Сода каустическая(чешуя) (меш.по 25 кг. ИРАН) в б/б(приход новый)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Угол древесныйктив.jpg" alt="Уголь древесный актив.БАУ-А(меш. 10кг)" width="250px" height="250px"></a>
+          <h2 class="text">Уголь древесный актив. <br> БАУ-А(10кг)</h2>
+          <button id="buttonClickProduct" value="Уголь древесный актив.БАУ-А(меш. 10кг)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Кислотщавелевая.jpg" alt="Кислота щавелевая" width="250px" height="250px"></a>
+          <h2 class="text">Кислота щавелевая</h2>
+          <button id="buttonClickProduct" value="Кислота щавелевая">Отправить заявку &#8594</button>
+        </div>
+        
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Калий-гидроокись-ХЧ-25кг.jpg" alt="Калия гидроокись 90%(меш. 25кг)Корея" width="250px" height="250px"></a>
+          <h2 class="text">Калия гидроокись <br> 90%(25кг)Корея</h2>
+          <button id="buttonClickProduct" value="Калия гидроокись 90%(меш. 25кг)Корея">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/КислотаБорная.jpg" alt="Кислота Борная" width="250px" height="250px"></a>
+          <h2 class="text">Кислота Борная</h2>
+          <button id="buttonClickProduct" value="Кислота Борная">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Углеродчеты.jpeg" alt="Углерод четыреххлористый (бут.1,6кг)" width="250px" height="250px"></a>
+          <h2 class="text">Углерод четыреххлористый <br> (бут.1,6кг)</h2>
+          <button id="buttonClickProduct" value="Углерод четыреххлористый (бут.1,6кг)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/118_original.jpg" alt="Натрий сернистый(сульфат содиум) 60%" width="250px" height="250px"></a>
+          <h2 class="text">Натрий сернистый <br> (сульфат содиум) 60%</h2>
+          <button id="buttonClickProduct" value="Натрий сернистый(сульфат содиум) 60%">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Карбамидмеш.по 50кг.jpeg" alt="Карбамид (меш.по 50кг)" width="250px" height="250px"></a>
+          <h2 class="text">Карбамид (меш.по 50кг)</h2>
+          <button id="buttonClickProduct" value="Карбамид (меш.по 50кг)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Кальцийхлористый.jpg" alt="Кальций хлористый" width="250px" height="250px"></a>
+          <h2 class="text">Кальций хлористый</h2>
+          <button id="buttonClickProduct" value="Кальций хлористый">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Молочнаяк-та.jpg" alt="Молочная кислота" width="250px" height="250px"></a>
+          <h2 class="text">Молочная кислота</h2>
+          <button id="buttonClickProduct" value="Молочная кислота">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аммонийхлори.jpeg" alt="Аммоний хлористый гран.(меш. 25кг)Узб." width="250px" height="250px"></a>
+          <h2 class="text">Аммоний хлористый <br> гран.(меш. 25кг)Узб.</h2>
+          <button id="buttonClickProduct" value="Аммоний хлористый гран.(меш. 25кг)Узб.">Отправить заявку &#8594</button>
+        </div>
+        
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аква-Аурат.jpg" alt="Аква-Аурат 30" width="250px" height="250px"></a>
+          <h2 class="text">Аква-Аурат 30</h2>
+          <button id="buttonClickProduct" value="Аква-Аурат 30">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аква-Аур.jpg" alt="Аква-Аурат 18" width="250px" height="250px"></a>
+          <h2 class="text">Аква-Аурат 18</h2>
+          <button id="buttonClickProduct" value="Аква-Аурат 18">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/cbe9caa6_230fb9e0_d5ee_4fae_b29f_3932b20a0492.jpg" alt="Сода каустическая(чешуя) (меш.по 25 кг. Китай) по 1125кг" width="250px" height="250px"></a>
+          <h2 class="text">Сода каустическая(чешуя) <br> (по 25 кг. Китай) по 1125кг</h2>
+          <button id="buttonClickProduct" value="Сода каустическая(чешуя) (меш.по 25 кг. Китай) по 1125кг">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/unnamed.jpg" alt="Калий хлористый" width="250px" height="250px"></a>
+          <h2 class="text">Калий хлористый</h2>
+          <button id="buttonClickProduct" value="Калий хлористый">Отправить заявку &#8594</button>
+        </div>
+
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/8ff423dd1a39e406ba1f99ff1fae52c3.jpg" alt="Цинк хлористый" width="250px" height="250px"></a>
+          <h2 class="text">Цинк хлористый</h2>
+          <button id="buttonClickProduct" value="Цинк хлористый">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <nav class="pagination-container" id="pag-cont">
+        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+          &lt;
+        </button>
+    
+        <div id="pagination-numbers">
+    
+        </div>
+    
+        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+          &gt;
+        </button>
+      </nav>
+
+      <div class="letter" id="charA">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Аммиак.jpg" alt="Пигмент" width="250px" height="250px"></a>
+          <h2 class="text">Аммиак водный м.Б</h2>
+          <button id="buttonClickProduct" value="Аммиак водный м.Б">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/995cb3824864ee32ce9863c0f2e5e843.jpg" alt="Азотная кислотa" width="250px" height="250px"></a>
+          <h2 class="text" >Азотная кислотa</h2>
+          <button id="buttonClickProduct" value="Азотная кислотa">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аммонийхлори.jpeg" alt="Аммоний хлористый гран.(меш. 25кг)Узб." width="250px" height="250px"></a>
+          <h2 class="text">Аммоний хлористый <br> гран.(меш. 25кг)Узб.</h2>
+          <button id="buttonClickProduct" value="Аммоний хлористый гран.(меш. 25кг)Узб.">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аква-Аурат.jpg" alt="Аква-Аурат 30" width="250px" height="250px"></a>
+          <h2 class="text">Аква-Аурат 30</h2>
+          <button id="buttonClickProduct" value="Аква-Аурат 30">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Аква-Аур.jpg" alt="Аква-Аурат 18" width="250px" height="250px"></a>
+          <h2 class="text">Аква-Аурат 18</h2>
+          <button id="buttonClickProduct" value="Аква-Аурат 18">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charB">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Бис.jpg" alt="Бисульфит натрия технический" width="250px" height="250px"></a>
+          <h2 class="text">Бисульфит натрия техн.</h2>
+          <button id="buttonClickProduct" value="Бисульфит натрия технический">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charG">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Гипохлорит.jpg" alt="Гипохлорит" width="250px" height="250px"></a>
+          <h2 class="text">Гипохлорит натрия РФ</h2>
+          <button id="buttonClickProduct" value="Гипохлорит натрия РФ">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Гипохлорит1.jpg" alt="Гипохлорит кальция (бочки 50 кг.)" width="250px" height="250px"></a>
+          <h2 class="text">Гипохлорит кальция (50 кг)</h2>
+          <button id="buttonClickProduct" value="Гипохлорит кальция (бочки 50 кг.)">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charK">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Кислота.jpg" alt="Кислота лимонная ГТД " width="250px" height="250px"></a>
+          <h2 class="text">Кислота лимонная ГТД</h2>
+          <button id="buttonClickProduct" value="Кислота лимонная ГТД">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Кислотщавелевая.jpg" alt="Кислота щавелевая" width="250px" height="250px"></a>
+          <h2 class="text">Кислота щавелевая</h2>
+          <button id="buttonClickProduct" value="Кислота щавелевая">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Калий-гидроокись-ХЧ-25кг.jpg" alt="Калия гидроокись 90%(меш. 25кг)Корея" width="250px" height="250px"></a>
+          <h2 class="text">Калия гидроокись <br> 90%(25кг)Корея</h2>
+          <button id="buttonClickProduct" value="Калия гидроокись 90%(меш. 25кг)Корея">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/КислотаБорная.jpg" alt="Кислота Борная" width="250px" height="250px"></a>
+          <h2 class="text">Кислота Борная</h2>
+          <button id="buttonClickProduct" value="Кислота Борная">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Карбамидмеш.по 50кг.jpeg" alt="Карбамид (меш.по 50кг)" width="250px" height="250px"></a>
+          <h2 class="text">Карбамид (меш.по 50кг)</h2>
+          <button id="buttonClickProduct" value="Карбамид (меш.по 50кг)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Кальцийхлористый.jpg" alt="Кальций хлористый" width="250px" height="250px"></a>
+          <h2 class="text">Кальций хлористый</h2>
+          <button id="buttonClickProduct" value="Кальций хлористый">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charM">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Муравьиная.jpg" alt="Муравьиная кислотa" width="250px" height="250px"></a>
+          <h2 class="text">Муравьиная кислота</h2>
+          <button id="buttonClickProduct" value="Муравьиная кислота">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Молочнаяк-та.jpg" alt="Молочная кислота" width="250px" height="250px"></a>
+          <h2 class="text">Молочная кислота</h2>
+          <button id="buttonClickProduct" value="Молочная кислота">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charN">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Натр.jpg" alt="Натр едкий марка А " width="250px" height="250px"></a>
+          <h2 class="text">Натр едкий марка А </h2>
+          <button id="buttonClickProduct" value="Натр едкий марка А">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Натр едкий марка РД.jpg" alt="Натр едкий марка РД " width="250px" height="250px"></a>
+          <h2 class="text" >Натр едкий марка РД </h2>
+          <button id="buttonClickProduct" value="Натр едкий марка РД ">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/НатрКитай.png" alt="Натр едкий гранулированный Китай (меш. по 25 кг.)" width="250px" height="250px"></a>
+          <h2 class="text">Натр едкий <br> гранулированный Китай (25кг)</h2>
+          <button id="buttonClickProduct" value="Натр едкий гранулированный Китай (меш. по 25 кг.)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Натредкийгр.jpg" alt="Натр едкий гранулированный СТО 00203275-206-2007(меш. по 25 кг.)" width="250px" height="250px"></a>
+          <h2 class="text">Натр едкий гранулированный <br> СТО 00203275-206-2007(25кг) </h2>
+          <button id="buttonClickProduct" value="Натр едкий гранулированный СТО 00203275-206-2007(меш. по 25 кг.)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Натрийгидроокись(бочка 60 кг)ЧДА.jpg" alt="Натрий гидроокись(бочка 60 кг) ЧДА" width="250px" height="250px"></a>
+          <h2 class="text">Натрий гидроокись <br> (бочка 60 кг) ЧДА</h2>
+          <button id="buttonClickProduct" value="Натрий гидроокись(60кг) ЧДА">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/118_original.jpg" alt="Натрий сернистый(сульфат содиум) 60%" width="250px" height="250px"></a>
+          <h2 class="text">Натрий сернистый <br> (сульфат содиум) 60%</h2>
+          <button id="buttonClickProduct" value="Натрий сернистый(сульфат содиум) 60%">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charO">
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Ортофосфорная.jpg" alt="Ортофосфорная кислота" width="250px" height="250px"></a>
+          <h2 class="text">Ортофосфорная кислота</h2>
+          <button id="buttonClickProduct" value="Ортофосфорная кислота">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charP">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Перекись.jpg" alt="Перекись водорода 34-39 %" width="250px" height="250px"></a>
+          <h2 class="text">Перекись водорода 34-39 %</h2>
+          <button id="buttonClickProduct" value="Перекись водорода 34-39 %">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Перекись50.jpg" alt="Перекись водорода 50%" width="250px" height="250px"></a>
+          <h2 class="text">Перекись водорода 50%</h2>
+          <button id="buttonClickProduct" value="Перекись водорода 50%">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Пропиленгликоль.png" alt="Пропиленгликоль" width="250px" height="250px"></a>
+          <h2 class="text">Пропиленгликоль</h2>
+          <button id="buttonClickProduct" value="Пропиленгликоль">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charS">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Сернаякислота.jpg" alt="Серная кислота" width="250px" height="250px"></a>
+          <h2 class="text">Серная кислота</h2>
+          <button id="buttonClickProduct" value="Серная кислота">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Соляная.jpg" alt="Соляная кислота ХЧ,Ч " width="250px" height="250px"></a>
+          <h2 class="text">Соляная кислота ХЧ,Ч</h2>
+          <button id="buttonClickProduct" value="Соляная кислота ХЧ,Ч ">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Сульфат.jpg" alt="Сульфат алюминия тех" width="250px" height="250px"></a>
+          <h2 class="text">Сульфат алюминия тех</h2>
+          <button id="buttonClickProduct" value="Сульфат алюминия тех">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Содаальцинированная.jpg" alt="Сода кальцинированная марка Б" width="250px" height="250px"></a>
+          <h2 class="text">Сода кальцинированная марка Б</h2>
+          <button id="buttonClickProduct" value="Сода кальцинированная марка Б">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Сольтабл.png" alt="Соль таблетированная поваренная экстра" width="250px" height="250px"></a>
+          <h2 class="text">Соль таблетированная <br> поваренная экстра</h2>
+          <button id="buttonClickProduct" value="Соль таблетированная поваренная экстра">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Содааустическая(.jpg" alt="Сода каустическая(чешуя) (меш.по 25 кг. ИРАН) в б/б(приход новый) " width="250px" height="250px"></a>
+          <h2 class="text">Сода каустическая(чешуя) <br> (25кг. ИРАН)</h2>
+          <button id="buttonClickProduct" value="Сода каустическая(чешуя) (меш.по 25 кг. ИРАН) в б/б(приход новый)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/cbe9caa6_230fb9e0_d5ee_4fae_b29f_3932b20a0492.jpg" alt="Сода каустическая(чешуя) (меш.по 25 кг. Китай) по 1125кг" width="250px" height="250px"></a>
+          <h2 class="text">Сода каустическая(чешуя) <br> (по 25 кг. Китай) по 1125кг</h2>
+          <button id="buttonClickProduct" value="Сода каустическая(чешуя) (меш.по 25 кг. Китай) по 1125кг">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charT">
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/ТринатрийФосфат.jpg" alt="ТринатрийФосфат" width="250px" height="250px"></a>
+          <h2 class="text">ТринатрийФосфат</h2>
+          <button id="buttonClickProduct" value="ТринатрийФосфат">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charU">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Уксусная.jpg" alt="Уксусная кислота 99%" width="250px" height="250px"></a>
+          <h2 class="text">Уксусная кислота 99%</h2>
+          <button id="buttonClickProduct" value="Уксусная кислота 99%">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal">
+          <a href="#"><img src="/img/Уксусная1.jpg" alt="Уксусная кислота раствор 70%" width="250px" height="250px"></a>
+          <h2 class="text">Уксусная кислота раствор 70%</h2>
+          <button id="buttonClickProduct" value="Уксусная кислота раствор 70%">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Угол древесныйктив.jpg" alt="Уголь древесный актив.БАУ-А(меш. 10кг)" width="250px" height="250px"></a>
+          <h2 class="text">Уголь древесный актив. <br> БАУ-А(10кг)</h2>
+          <button id="buttonClickProduct" value="Уголь древесный актив.БАУ-А(меш. 10кг)">Отправить заявку &#8594</button>
+        </div>
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/Углеродчеты.jpeg" alt="Углерод четыреххлористый (бут.1,6кг)" width="250px" height="250px"></a>
+          <h2 class="text">Углерод четыреххлористый <br> (бут.1,6кг)</h2>
+          <button id="buttonClickProduct" value="Углерод четыреххлористый (бут.1,6кг)">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charH">
+        <div class="product-catal">
+          <a href="#"><img src="/img/Хлорное.jpg" alt="Хлорное железо" width="250px" height="250px"></a>
+          <h2 class="text">Хлорное железо</h2>
+          <button id="buttonClickProduct" value="Хлорное железо">Отправить заявку &#8594</button>
+        </div>
+      </div>
+
+      <div class="letter" id="charCH">
+        <div class="product-catal list" id="list">
+          <a href="#"><img src="/img/8ff423dd1a39e406ba1f99ff1fae52c3.jpg" alt="Цинк хлористый" width="250px" height="250px"></a>
+          <h2 class="text">Цинк хлористый</h2>
+          <button id="buttonClickProduct" value="Цинк хлористый">Отправить заявку &#8594</button>
+        </div>
+      </div>
+      <hr>
+      <div class="nonProduct">
+        <h3>Не нашли товар?</h3>
+        <button id="buttonClickProduct">Оставьте заявку</button>
+      </div>
+    </div>
+  </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="footer-bottom">
+      <h2>ООО “Спецпромгрупп”</h2>
+      <div class="bottom-text">
+        <h2>Продажа химических реактивов и материалов для промышленных предприятий</h2>
+        <div class="bottom-text__link">
+          <div class="bottom-text__link-text">
+            <p>Телефон</p>
+            <a href="tel:+77019403367">+7(701)940-33-67</a>
+          </div>
+          <div class="bottom-text__link-text">
+            <p>Почта</p>
+            <a href="mailto:specpromkz11@mail.ru">specpromkz11@mail.ru</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="prava">
+      <h2>© 2007-2024 Все права защищены</h2>
+      <a href="#" target="_blank">политика конфиденциальности</a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
+  <script src="/feedback/js/add.js"></script>
+  <script src="/feedback/js/form-processing.js"></script>
+  <script>
+    $(".phone_mask").mask("+7(999)999-99-99");
+    /*
+      attachMaxItems: 3,
+      attachMaxFileSize: 128,
+      attachExt: ['png', 'jpg']
+    */
+  
+    ItcSubmitForm.getOrCreateInstance('form');
+  
+    document.addEventListener('itc.successSendForm', (e) => {
+      const el = e.target.closest('.form-container').querySelector('.form-success');
+      el.classList.remove('form-success_hide');
+    });
+  
+    // при клике на .form-success__btn
+    document.querySelector('.form-success__btn').addEventListener('click', (e) => {
+      const el = e.target.closest('.form-container').querySelector('form');
+      const form = ItcSubmitForm.getOrCreateInstance(el);
+      form.reset();
+      location. reload();
+      e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
+    });
+  
+  </script>
+  <script src="/script/pagination.js"></script>
+  <script src="/script/script.js"></script>
+  <script src="/script/up.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.js" integrity="sha512-bvxXT2u2PNVKMpHmLR54QQ+qAnhn0dM//5spHP+sjRcnlZSmNMaLkvZXAr8peMHyNlUoDEgNnYIlrUTnr5kNYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+  </html>
+  

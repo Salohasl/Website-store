@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menuBtn.active span:nth-of-type(1) {
+  display: none;
+}
+
+.menuBtn.active span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menuBtn.active span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+.menuBtn {
+  margin-left: 85%;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  position: fixed;
+  z-index: 3;
+  overflow: hidden;
+  display: none;
+}
+
+.menuBtn span {
+  width: 34px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  transition: all 0.5s;
+}
+
+.menuBtn span:nth-of-type(2) {
+  top: calc(20% - 5px);
+}
+
+.menuBtn span:nth-of-type(3) {
+  top: calc(80% + 5px);
+}
+
+header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .header-up {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: #00296b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-up button {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  background-color: #FF6E28;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  margin-right: 1%;
+  color: white;
+  font-size: 20px;
+  transition: 0.5s;
+}
+header .header-up button:hover {
+  background-color: #252525;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+header ul a {
+  text-decoration: none;
+  font-weight: 200;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  transition: 0.5s;
+}
+header ul a:hover {
+  color: #FF6E28;
+}
+header ul a.active {
+  color: #FF6E28;
+}
+
+hr {
+  margin-top: 7%;
+  border: 1px solid rgba(179, 179, 179, 0.2);
+}
+
+main {
+  background-image: url(/img/fon-kolba.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.wrapper {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  background-color: rgba(105, 105, 105, 0.9);
+}
+.wrapper h2 {
+  font-weight: 200;
+  font-size: 30px;
+  color: #252525;
+}
+.wrapper h1 {
+  padding-top: 5%;
+  color: #252525;
+  font-weight: 200;
+  padding-bottom: 2%;
+}
+.wrapper .about {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.wrapper .about .about-text {
+  width: 60%;
+}
+.wrapper .about .about-text p {
+  width: 70%;
+  font-size: 25px;
+  color: white;
+  padding-top: 4%;
+}
+.wrapper .about .map {
+  margin-top: -5%;
+}
+.wrapper .about .map h2 {
+  margin-bottom: 5%;
+}
+
+.company {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.company .company-block {
+  width: 25%;
+}
+.company .company-block p {
+  margin-top: 4%;
+}
+.company .company-block a {
+  color: #00296b;
+  font-size: 20px;
+  transition: 0.5s;
+}
+.company .company-block a:hover {
+  color: #fdc500;
+}
+.company .company-block h1 {
+  font-size: 25px;
+  color: white;
+}
+.company .company-block h3 {
+  color: white;
+}
+
+footer {
+  background-color: #00296b;
+}
+footer .footer-bottom {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .footer-bottom h2 {
+  color: white;
+  font-size: 35px;
+}
+footer .footer-bottom .bottom-text h2 {
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 3%;
+}
+footer .footer-bottom .bottom-text__link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+footer .footer-bottom .bottom-text__link p {
+  color: white;
+  font-size: 20px;
+}
+footer .footer-bottom .bottom-text__link a {
+  text-decoration: none;
+  color: #FF6E28;
+}
+footer hr {
+  margin-top: 0%;
+}
+
+.prava {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.prava h2 {
+  color: white;
+  font-size: 17px;
+  font-weight: 200;
+}
+.prava a {
+  text-decoration: none;
+  color: #FF6E28;
+}/*# sourceMappingURL=style.css.map */
