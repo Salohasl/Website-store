@@ -28,7 +28,7 @@ html {
   width: 100px;
   height: 30px;
   position: fixed;
-  z-index: 3;
+  z-index: 200;
   overflow: hidden;
   display: none;
 }
@@ -40,7 +40,7 @@ html {
   top: 50%;
   left: 75%;
   transform: translate(-50%, -50%);
-  background-color: yellow;
+  background-color: white;
   transition: all 0.5s;
 }
 
@@ -346,6 +346,7 @@ footer .footer-bottom {
   padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -362,6 +363,7 @@ footer .footer-bottom .bottom-text h2 {
 footer .footer-bottom .bottom-text__link {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-top: 4%;
@@ -382,6 +384,7 @@ footer hr {
   padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }

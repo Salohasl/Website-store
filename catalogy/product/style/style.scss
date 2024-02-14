@@ -33,7 +33,7 @@
     width: 100px;
     height: 30px;
     position: fixed;
-    z-index: 3;
+    z-index: 200;
     overflow: hidden;
     display: none;
   }
@@ -45,7 +45,7 @@
     top: 50%;
     left: 75%;
     transform: translate(-50%, -50%);
-    background-color: yellow;
+    background-color: white;
     transition: all 0.5s;
   }
   
@@ -174,7 +174,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin-right: 3%;
+        margin-right: 10%;
         .wrapper-content__heading{
             h2{
                 color: #00296b;
@@ -221,60 +221,62 @@
         }
     }
 }
-  footer{
-    background-color: $blue;
-    margin-top: 5%;
-      .footer-bottom{
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+footer{
+  background-color: $blue;
+    .footer-bottom{
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      h2{
+        color: white;
+        font-size: 35px;
+      }
+      .bottom-text{
         h2{
           color: white;
-          font-size: 35px;
-        }
-        .bottom-text{
-          h2{
-            color: white;
-            font-weight: 200;
-            font-size: 20px;
-            margin-top: 3%;
-          }
-        }
-        .bottom-text__link{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          margin-top: 4%;
-          p{
-            color: white;
-            font-size: 20px;
-          }
-          a{
-            text-decoration: none;
-            color: $yellow;
-          }
+          font-weight: 200;
+          font-size: 20px;
+          margin-top: 3%;
         }
       }
-      hr{
-        margin-top: 0%;
+      .bottom-text__link{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 4%;
+        p{
+          color: white;
+          font-size: 20px;
+        }
+        a{
+          text-decoration: none;
+          color: $yellow;
+        }
       }
     }
-  .prava{
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    h2{
-      color: white;
-      font-size: 17px;
-      font-weight: 200;
-    }
-    a{
-      text-decoration: none;
-      color: $yellow;
+    hr{
+      margin-top: 0%;
     }
   }
+.prava{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  h2{
+    color: white;
+    font-size: 17px;
+    font-weight: 200;
+  }
+  a{
+    text-decoration: none;
+    color: $yellow;
+  }
+}

@@ -98,16 +98,15 @@ textarea {
 .form__wrapper{
   background-color: white;
   width: 500px;
+  height: 100vh;
   padding: 1%;
-  margin-top:5%;
-  margin-bottom: 5%;
   z-index: 100;
 }
 
 .container{
   z-index: 150;
   position: fixed;
-  padding-top: 100px;
+  padding-top: 1000px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -454,7 +453,7 @@ textarea::placeholder{
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 20px;
+  font-size: 15px;
 
   color: #dc3545;
 }
@@ -597,8 +596,9 @@ textarea.form-control.is-invalid {
 .form-control.is-invalid~.invalid-feedback,
 .is-invalid .invalid-feedback {
   display: block;
-  font-size: 25px;
+  font-size: 17px;
   font-weight: bold;
+  text-align: center;
 }
 
 .form-submit {

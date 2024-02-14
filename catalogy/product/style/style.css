@@ -28,7 +28,7 @@ html {
   width: 100px;
   height: 30px;
   position: fixed;
-  z-index: 3;
+  z-index: 200;
   overflow: hidden;
   display: none;
 }
@@ -40,7 +40,7 @@ html {
   top: 50%;
   left: 75%;
   transform: translate(-50%, -50%);
-  background-color: yellow;
+  background-color: white;
   transition: all 0.5s;
 }
 
@@ -170,7 +170,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-right: 3%;
+  margin-right: 10%;
 }
 .wrapper .wrapper-content .wrapper-content__heading h2 {
   color: #00296b;
@@ -218,12 +218,12 @@ body {
 
 footer {
   background-color: #00296b;
-  margin-top: 5%;
 }
 footer .footer-bottom {
   padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -240,6 +240,7 @@ footer .footer-bottom .bottom-text h2 {
 footer .footer-bottom .bottom-text__link {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-top: 4%;
@@ -260,6 +261,7 @@ footer hr {
   padding: 20px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
